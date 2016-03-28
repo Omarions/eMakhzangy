@@ -1,0 +1,497 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane maxHeight="615.0" maxWidth="976.0" minHeight="615.0" minWidth="976.0" prefHeight="615.0" prefWidth="976.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="emakhzangy.MainController">
+   <left>
+      <Accordion BorderPane.alignment="CENTER">
+        <panes>
+          <TitledPane animated="false" text="Parts">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <VBox alignment="TOP_CENTER" layoutX="20.0" layoutY="8.0" prefHeight="200.0" prefWidth="100.0" spacing="15.0" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="5.0">
+                           <padding>
+                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                           </padding>
+                           <opaqueInsets>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </opaqueInsets>
+                           <children>
+                              <Button mnemonicParsing="false" onAction="#showNewItemForm" prefHeight="22.0" prefWidth="174.0" text="New">
+                                 <effect>
+                                    <DropShadow />
+                                 </effect></Button>
+                              <Button layoutX="15.0" layoutY="15.0" mnemonicParsing="false" prefHeight="22.0" prefWidth="174.0" text="Update">
+                                 <effect>
+                                    <DropShadow />
+                                 </effect>
+                              </Button>
+                              <Button layoutX="15.0" layoutY="47.0" mnemonicParsing="false" prefHeight="22.0" prefWidth="174.0" text="Remove ">
+                                 <effect>
+                                    <DropShadow />
+                                 </effect>
+                              </Button>
+                              <Button layoutX="15.0" layoutY="79.0" mnemonicParsing="false" onAction="#showSearchItemForm" prefHeight="22.0" prefWidth="174.0" text="Search...">
+                                 <effect>
+                                    <DropShadow />
+                                 </effect>
+                              </Button>
+                              <Button layoutX="15.0" layoutY="79.0" mnemonicParsing="false" prefHeight="22.0" prefWidth="174.0" text="Report By Employee">
+                                 <effect>
+                                    <DropShadow />
+                                 </effect>
+                              </Button>
+                              <Button layoutX="15.0" layoutY="143.0" mnemonicParsing="false" prefHeight="22.0" prefWidth="174.0" text="Report By Date">
+                                 <effect>
+                                    <DropShadow />
+                                 </effect>
+                              </Button>
+                              <Button layoutX="15.0" layoutY="175.0" mnemonicParsing="false" prefHeight="22.0" prefWidth="174.0" text="Report All...">
+                                 <effect>
+                                    <DropShadow />
+                                 </effect>
+                              </Button>
+                           </children>
+                        </VBox>
+                     </children>
+                  </AnchorPane>
+            </content>
+          </TitledPane>
+          <TitledPane animated="false" text="Inventory">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0" spacing="15.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <Button mnemonicParsing="false" prefHeight="22.0" prefWidth="174.0" text="New ">
+                                 <effect>
+                                    <DropShadow />
+                                 </effect>
+                              </Button>
+                              <Button layoutX="15.0" layoutY="15.0" mnemonicParsing="false" prefHeight="22.0" prefWidth="174.0" text="Update">
+                                 <effect>
+                                    <DropShadow />
+                                 </effect>
+                              </Button>
+                              <Button layoutX="15.0" layoutY="47.0" mnemonicParsing="false" prefHeight="22.0" prefWidth="174.0" text="Remove">
+                                 <effect>
+                                    <DropShadow />
+                                 </effect>
+                              </Button>
+                              <Button layoutX="15.0" layoutY="79.0" mnemonicParsing="false" prefHeight="22.0" prefWidth="174.0" text="Search...">
+                                 <effect>
+                                    <DropShadow />
+                                 </effect>
+                              </Button>
+                              <Button layoutX="15.0" layoutY="79.0" mnemonicParsing="false" prefHeight="22.0" prefWidth="174.0" text="Report By Employee">
+                                 <effect>
+                                    <DropShadow />
+                                 </effect>
+                              </Button>
+                              <Button layoutX="15.0" layoutY="143.0" mnemonicParsing="false" prefHeight="22.0" prefWidth="174.0" text="Report By Date">
+                                 <effect>
+                                    <DropShadow />
+                                 </effect>
+                              </Button>
+                              <Button layoutX="15.0" layoutY="175.0" mnemonicParsing="false" prefHeight="22.0" prefWidth="174.0" text="Report All...">
+                                 <effect>
+                                    <DropShadow />
+                                 </effect>
+                              </Button>
+                           </children>
+                           <opaqueInsets>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </opaqueInsets>
+                           <padding>
+                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                           </padding>
+                        </VBox>
+                     </children></AnchorPane>
+            </content>
+          </TitledPane>
+          <TitledPane animated="false" text="Inventory Operations">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0" spacing="15.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <Button mnemonicParsing="false" prefHeight="22.0" prefWidth="174.0" text="New Out Operation">
+                                 <effect>
+                                    <DropShadow />
+                                 </effect>
+                              </Button>
+                              <Button layoutX="15.0" layoutY="15.0" mnemonicParsing="false" prefHeight="22.0" prefWidth="174.0" text="New In Operation">
+                                 <effect>
+                                    <DropShadow />
+                                 </effect>
+                              </Button>
+                              <Button layoutX="15.0" layoutY="47.0" mnemonicParsing="false" prefHeight="22.0" prefWidth="174.0" text="Edit Operation">
+                                 <effect>
+                                    <DropShadow />
+                                 </effect>
+                              </Button>
+                              <Button layoutX="15.0" layoutY="79.0" mnemonicParsing="false" prefHeight="22.0" prefWidth="174.0" text="Search...">
+                                 <effect>
+                                    <DropShadow />
+                                 </effect>
+                              </Button>
+                              <Button layoutX="15.0" layoutY="79.0" mnemonicParsing="false" prefHeight="22.0" prefWidth="174.0" text="Report By Employee">
+                                 <effect>
+                                    <DropShadow />
+                                 </effect>
+                              </Button>
+                              <Button layoutX="15.0" layoutY="143.0" mnemonicParsing="false" prefHeight="22.0" prefWidth="174.0" text="Report By Date">
+                                 <effect>
+                                    <DropShadow />
+                                 </effect>
+                              </Button>
+                              <Button layoutX="15.0" layoutY="175.0" mnemonicParsing="false" prefHeight="22.0" prefWidth="174.0" text="Report All...">
+                                 <effect>
+                                    <DropShadow />
+                                 </effect>
+                              </Button>
+                           </children>
+                           <opaqueInsets>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </opaqueInsets>
+                           <padding>
+                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                           </padding>
+                        </VBox>
+                     </children></AnchorPane>
+            </content>
+          </TitledPane>
+            <TitledPane animated="false" layoutX="15.0" layoutY="59.0" text="Reports">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0" spacing="15.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <Button mnemonicParsing="false" prefHeight="22.0" prefWidth="174.0" text="New Invoice">
+                                 <effect>
+                                    <DropShadow />
+                                 </effect>
+                              </Button>
+                              <Button layoutX="15.0" layoutY="15.0" mnemonicParsing="false" prefHeight="22.0" prefWidth="174.0" text="Update Invoice">
+                                 <effect>
+                                    <DropShadow />
+                                 </effect>
+                              </Button>
+                              <Button layoutX="15.0" layoutY="47.0" mnemonicParsing="false" prefHeight="22.0" prefWidth="174.0" text="Remove Invoice">
+                                 <effect>
+                                    <DropShadow />
+                                 </effect>
+                              </Button>
+                              <Button layoutX="15.0" layoutY="79.0" mnemonicParsing="false" prefHeight="22.0" prefWidth="174.0" text="Search...">
+                                 <effect>
+                                    <DropShadow />
+                                 </effect>
+                              </Button>
+                              <Button layoutX="15.0" layoutY="79.0" mnemonicParsing="false" prefHeight="22.0" prefWidth="174.0" text="Report By Employee">
+                                 <effect>
+                                    <DropShadow />
+                                 </effect>
+                              </Button>
+                              <Button layoutX="15.0" layoutY="143.0" mnemonicParsing="false" prefHeight="22.0" prefWidth="174.0" text="Report By Date">
+                                 <effect>
+                                    <DropShadow />
+                                 </effect>
+                              </Button>
+                              <Button layoutX="15.0" layoutY="175.0" mnemonicParsing="false" prefHeight="22.0" prefWidth="174.0" text="Report All...">
+                                 <effect>
+                                    <DropShadow />
+                                 </effect>
+                              </Button>
+                           </children>
+                           <opaqueInsets>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </opaqueInsets>
+                           <padding>
+                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                           </padding>
+                        </VBox>
+                     </children></AnchorPane>
+               </content>
+            </TitledPane>
+        </panes>
+         <BorderPane.margin>
+            <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+         </BorderPane.margin>
+         <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </padding>
+         <opaqueInsets>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </opaqueInsets>
+         <effect>
+            <DropShadow />
+         </effect>
+      </Accordion>
+   </left>
+   <top>
+      <VBox maxHeight="64.0" minHeight="64.0" prefHeight="64.0" prefWidth="976.0" BorderPane.alignment="CENTER">
+         <children>
+            <MenuBar>
+              <menus>
+                <Menu mnemonicParsing="false" text="File">
+                  <items>
+                    <MenuItem mnemonicParsing="false" text="Close" />
+                  </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Edit">
+                  <items>
+                    <MenuItem mnemonicParsing="false" text="Delete" />
+                  </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Help">
+                  <items>
+                    <MenuItem mnemonicParsing="false" text="About" />
+                  </items>
+                </Menu>
+              </menus>
+            </MenuBar>
+            <ToolBar prefHeight="40.0" prefWidth="200.0">
+              <items>
+                <Button mnemonicParsing="false" text="New" />
+                  <Button mnemonicParsing="false" text="Edit" />
+                  <Button mnemonicParsing="false" text="Remove" />
+                  <Button mnemonicParsing="false" text="Search" />
+                  <Separator orientation="VERTICAL" prefHeight="0.0" prefWidth="0.0" />
+                  <Button mnemonicParsing="false" text="New" />
+                  <Button mnemonicParsing="false" text="Edit" />
+                  <Button mnemonicParsing="false" text="Remove" />
+                  <Button mnemonicParsing="false" text="Search" />
+                  <Separator orientation="VERTICAL" prefHeight="0.0" prefWidth="4.0" />
+                  <Button mnemonicParsing="false" text="New" />
+                  <Button mnemonicParsing="false" text="Edit" />
+                  <Button mnemonicParsing="false" text="Remove" />
+                  <Button mnemonicParsing="false" text="Search" />
+                  <Separator orientation="VERTICAL" prefHeight="0.0" prefWidth="0.0" />
+                  <Button mnemonicParsing="false" text="New" />
+                  <Button mnemonicParsing="false" text="Edit" />
+                  <Button mnemonicParsing="false" text="Remove" />
+                  <Button mnemonicParsing="false" text="Search" />
+              </items>
+               <opaqueInsets>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </opaqueInsets>
+               <effect>
+                  <DropShadow />
+               </effect>
+               <VBox.margin>
+                  <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+               </VBox.margin>
+               <padding>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </padding>
+            </ToolBar>
+            <Separator orientation="VERTICAL" prefHeight="0.0" prefWidth="0.0" />
+         </children>
+      </VBox>
+   </top>
+   <center>
+      <ScrollPane prefHeight="497.0" prefWidth="731.0" BorderPane.alignment="CENTER">
+        <content>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="481.0" prefWidth="727.0">
+               <padding>
+                  <Insets left="5.0" right="5.0" top="5.0" />
+               </padding>
+               <opaqueInsets>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </opaqueInsets>
+               <effect>
+                  <DropShadow />
+               </effect>
+               <children>
+                  <BorderPane layoutX="10.0" layoutY="10.0" prefHeight="471.0" prefWidth="727.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <top>
+                        <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                           <children>
+                              <GridPane hgap="5.0" layoutX="14.0" layoutY="14.0" prefHeight="200.0" prefWidth="717.0" vgap="5.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                <columnConstraints>
+                                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="166.0" minWidth="10.0" prefWidth="116.0" />
+                                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="277.0" minWidth="10.0" prefWidth="188.0" />
+                                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="268.0" minWidth="10.0" prefWidth="223.0" />
+                                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="155.0" minWidth="10.0" prefWidth="150.0" />
+                                </columnConstraints>
+                                <rowConstraints>
+                                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                </rowConstraints>
+                                 <padding>
+                                    <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                 </padding>
+                                 <children>
+                                    <Label prefHeight="28.0" prefWidth="154.0" text="Search By Date:" GridPane.rowIndex="3">
+                                       <GridPane.margin>
+                                          <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                       </GridPane.margin>
+                                    </Label>
+                                    <DatePicker fx:id="dpStartDate" promptText="Start Date" showWeekNumbers="true" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                                       <GridPane.margin>
+                                          <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                       </GridPane.margin>
+                                    </DatePicker>
+                                    <DatePicker fx:id="dpEndDate" promptText="Last Date" showWeekNumbers="true" GridPane.columnIndex="2" GridPane.rowIndex="3">
+                                       <GridPane.margin>
+                                          <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                       </GridPane.margin>
+                                    </DatePicker>
+                                    <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="3" GridPane.rowIndex="3">
+                                       <children>
+                                          <Button cancelButton="true" mnemonicParsing="false" onAction="#reset" text="Reset All" />
+                                          <Button defaultButton="true" mnemonicParsing="false" onAction="#search" text="Search">
+                                             <HBox.margin>
+                                                <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                             </HBox.margin>
+                                          </Button>
+                                       </children>
+                                    </HBox>
+                                    <Label text="Operation:" GridPane.rowIndex="1">
+                                       <GridPane.margin>
+                                          <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                       </GridPane.margin>
+                                    </Label>
+                                    <ComboBox fx:id="cmbOperations" onAction="#OperationChanged" prefHeight="22.0" prefWidth="171.0" promptText="Select Operation" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                       <GridPane.margin>
+                                          <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                       </GridPane.margin>
+                                    </ComboBox>
+                                    <Label text="Project:" GridPane.rowIndex="2">
+                                       <GridPane.margin>
+                                          <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                       </GridPane.margin>
+                                    </Label>
+                                    <ComboBox fx:id="cmbProjects" layoutX="150.0" layoutY="77.0" onAction="#projectChanged" prefHeight="22.0" prefWidth="171.0" promptText="Select Project" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                       <GridPane.margin>
+                                          <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                       </GridPane.margin>
+                                    </ComboBox>
+                                    <ImageView fitHeight="136.0" fitWidth="375.0" pickOnBounds="true" GridPane.columnIndex="2" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.valignment="TOP" GridPane.vgrow="ALWAYS">
+                                       <image>
+                                          <Image url="@images/telecom_background.jpg" />
+                                       </image>
+                                       <GridPane.margin>
+                                          <Insets bottom="10.0" />
+                                       </GridPane.margin>
+                                    </ImageView>
+                                    <ImageView fitHeight="72.0" fitWidth="313.0" pickOnBounds="true" GridPane.columnSpan="2">
+                                       <image>
+                                          <Image url="@images/ngc_logo_transparent.gif" />
+                                       </image>
+                                    </ImageView>
+                                 </children>
+                              </GridPane>
+                           </children>
+                        </AnchorPane>
+                     </top>
+                     <bottom>
+                        <ToolBar prefHeight="32.0" prefWidth="662.0" BorderPane.alignment="BOTTOM_CENTER">
+                          <items>
+                            <Button mnemonicParsing="false" text="|&lt;" />
+                              <Button mnemonicParsing="false" text="&lt;&lt;" />
+                              <Label fx:id="lblCountRows" alignment="CENTER" contentDisplay="CENTER" prefHeight="17.0" prefWidth="87.0" text="sub/total" textAlignment="CENTER" />
+                              <Button mnemonicParsing="false" text="&gt;&gt;" />
+                              <Button mnemonicParsing="false" text="&gt;|" />
+                              <Separator prefHeight="22.0" prefWidth="42.0" />
+                              <Button mnemonicParsing="false" text="Print" />
+                          </items>
+                           <BorderPane.margin>
+                              <Insets left="5.0" right="5.0" top="5.0" />
+                           </BorderPane.margin>
+                           <padding>
+                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                           </padding>
+                           <opaqueInsets>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </opaqueInsets>
+                           <effect>
+                              <DropShadow />
+                           </effect>
+                        </ToolBar>
+                     </bottom>
+                     <center>
+                        <TableView fx:id="tblMain" prefHeight="193.0" prefWidth="707.0" BorderPane.alignment="BOTTOM_CENTER">
+                          <columns>
+                            <TableColumn fx:id="tcInvenOpID" prefWidth="41.0" text="#" />
+                            <TableColumn fx:id="tcItemName" prefWidth="109.0" text="Item Name" />
+                              <TableColumn fx:id="tcOperationType" prefWidth="107.0" text="Operation Type" />
+                              <TableColumn fx:id="tcDocumentSerial" prefWidth="106.0" text="Document Serial" />
+                              <TableColumn fx:id="tcProjectName" prefWidth="120.0" text="Project" />
+                          </columns>
+                           <effect>
+                              <DropShadow />
+                           </effect>
+                           <opaqueInsets>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </opaqueInsets>
+                           <BorderPane.margin>
+                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                           </BorderPane.margin>
+                           <padding>
+                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                           </padding>
+                        </TableView>
+                     </center>
+                  </BorderPane>
+               </children>
+            </AnchorPane>
+        </content>
+         <BorderPane.margin>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </BorderPane.margin>
+         <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </padding>
+         <effect>
+            <DropShadow />
+         </effect>
+         <opaqueInsets>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </opaqueInsets>
+      </ScrollPane>
+   </center>
+   <bottom>
+      <ToolBar prefHeight="40.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <opaqueInsets>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </opaqueInsets>
+         <effect>
+            <DropShadow />
+         </effect>
+         <BorderPane.margin>
+            <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+         </BorderPane.margin>
+         <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </padding>
+         <tooltip>
+            <Tooltip text="Empty Tooltip" />
+         </tooltip>
+         <items>
+            <HBox alignment="CENTER" prefHeight="30.0" prefWidth="941.0">
+               <children>
+                  <Label text="Designed and Developed By &quot;Eng. Omar Fawzy&quot;. All Rights Reseverd 2016" />
+               </children>
+               <effect>
+                  <DropShadow />
+               </effect>
+            </HBox>
+         </items>
+      </ToolBar>
+   </bottom>
+   <effect>
+      <DropShadow />
+   </effect>
+   
+</BorderPane>
