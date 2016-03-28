@@ -23,13 +23,16 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.DatePicker;
+import javafx.scene.control.DialogPane;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.TitledPane;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
@@ -259,5 +262,27 @@ public class MainController implements Initializable {
         } catch (IOException ex) {
             Logger.getLogger(MainController.class.getName()).log(Level.SEVERE, null, ex);
         }
+    }
+    
+    public void showNewOutDocument(ActionEvent event){
+        try {
+            //load NewOutDocument form fxml file
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(getClass().getResource("NewOutDocument.fxml"));
+            TitledPane dialogPane = (TitledPane) loader.load();
+            
+            Scene scene = new Scene(dialogPane);
+            scene.setFill(null);
+            
+            Stage dialogStage = new Stage();
+            dialogStage.initModality(Modality.WINDOW_MODAL);
+            dialogStage.initOwner(((Node)event.getSource()).getScene().getWindow());
+            dialogStage.initStyle(StageStyle.TRANSPARENT);
+            dialogStage.setScene(scene);
+            dialogStage.showAndWait();
+        } catch (IOException ex) {
+            Logger.getLogger(MainController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
     }
 }

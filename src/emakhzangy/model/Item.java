@@ -151,4 +151,11 @@ public class Item {
         this.comments.set(comments);
     }
 
+    @Override
+    public String toString() {
+        return getName();
+    }
+    
+    
+
 }

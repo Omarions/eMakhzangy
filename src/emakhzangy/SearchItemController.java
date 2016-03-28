@@ -166,15 +166,15 @@ public class SearchItemController implements Initializable {
                         FXMLLoader loader = new FXMLLoader();
                         loader.setLocation(getClass().getResource("EditItemForm.fxml"));
                         AnchorPane page = (AnchorPane) loader.load();
-
+                        //create scene with page.
+                        Scene scene = new Scene(page);
+                        scene.setFill(null);    //to make it transperent
+                        
                         //crate the dialog stage
                         Stage dialogStage = new Stage();
                         dialogStage.initModality(Modality.WINDOW_MODAL);
                         dialogStage.initOwner(((Node) event.getSource()).getScene().getWindow());
                         dialogStage.initStyle(StageStyle.TRANSPARENT);
-                        
-                        Scene scene = new Scene(page);
-                        scene.setFill(null);
                         dialogStage.setScene(scene);
                         
                         //set the item in the controller
