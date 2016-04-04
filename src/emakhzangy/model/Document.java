@@ -6,10 +6,8 @@
 package emakhzangy.model;
 
 import java.time.LocalDate;
-import javafx.beans.property.DoubleProperty;
 import javafx.beans.property.IntegerProperty;
 import javafx.beans.property.ObjectProperty;
-import javafx.beans.property.SimpleDoubleProperty;
 import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleObjectProperty;
 import javafx.beans.property.SimpleStringProperty;
@@ -20,12 +18,12 @@ import javafx.beans.property.StringProperty;
  * @author Omar
  */
 public class Document {
-    private IntegerProperty id;
-    private ObjectProperty<Operation> operation;
-    private StringProperty from;
-    private StringProperty to;
-    private ObjectProperty<LocalDate> date;  
-    private StringProperty comments;
+    private final IntegerProperty id;
+    private final ObjectProperty<Operation> operation;
+    private final StringProperty from;
+    private final StringProperty to;
+    private final ObjectProperty<LocalDate> date;  
+    private final StringProperty comments;
 
     public Document() {
         this.id = new SimpleIntegerProperty();

@@ -24,13 +24,14 @@ public class DBConnection {
     public static Connection connect() throws SQLException{
         try{
             Class.forName("com.mysql.jdbc.Driver").newInstance();
+            conn = DriverManager.getConnection(URL,USER,PASSWORD);
             
         }catch(ClassNotFoundException e){
             
         } catch (InstantiationException | IllegalAccessException ex) {
             Logger.getLogger(DBConnection.class.getName()).log(Level.SEVERE, null, ex);
         }
-        conn = DriverManager.getConnection(URL,USER,PASSWORD);
+        
         return conn;
     }
     

@@ -69,8 +69,4 @@ public class cOperation {
         }
         return list;
     }
-    
-    public String getOperationName(int id){
-        return null;
-    }
 }

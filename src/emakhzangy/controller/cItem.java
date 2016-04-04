@@ -32,20 +32,21 @@ public class cItem {
     
     public List<Item> getAll(){
         List<Item> list = new ArrayList<>();
-        String query = "SELECT * FROM item";
+        String query = "SELECT i.*, iv.available_qty FROM item AS i INNER JOIN inventory AS iv ON(i.id = iv.item_id)";
         try {
             PreparedStatement prep = conn.prepareStatement(query);
             ResultSet rs = prep.executeQuery();
             while(rs.next()){
                 //get item info from each row.
-                int id = rs.getInt("id");
-                String name = rs.getString("name");
-                String tags = rs.getString("tags");
-                String unit = rs.getString("unit");
-                double unitPrice = rs.getDouble("unit_price");
-                String comments = rs.getString("comments");
+                int id = rs.getInt("i.id");
+                String name = rs.getString("i.name");
+                String tags = rs.getString("i.tags");
+                int quantity = rs.getInt("iv.available_qty");
+                String unit = rs.getString("i.unit");
+                double unitPrice = rs.getDouble("i.unit_price");
+                String comments = rs.getString("i.comments");
                 //create new object of item with its data
-                Item item = new Item(id, name, tags, unit, unitPrice, comments);
+                Item item = new Item(id, name, tags,quantity, unit, unitPrice, comments);
                 //add new item to the list.
                 list.add(item);
             }

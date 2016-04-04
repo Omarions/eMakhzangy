@@ -15,9 +15,9 @@ import javafx.beans.property.SimpleObjectProperty;
  * @author Omar
  */
 public class Inventory {
-    private IntegerProperty id;
-    private ObjectProperty<Item> item;
-    private IntegerProperty availableQty;
+    private final IntegerProperty id;
+    private final ObjectProperty<Item> item;
+    private final IntegerProperty availableQty;
 
     public Inventory() {
         this.id = new SimpleIntegerProperty();

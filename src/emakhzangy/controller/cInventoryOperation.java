@@ -97,6 +97,21 @@ public class cInventoryOperation {
     }
     
     public int add(InventoryOperation io){
+        String query = "INSERT INTO inventory_operation (inventory_id, document_id, project_id, quantity, comments) VALUES(?,?,?,?,?)";
+        try {
+            PreparedStatement prep = conn.prepareStatement(query);
+            prep.setInt(1, io.getInventory().getId());
+            prep.setInt(2, io.getDocument().getId());
+            prep.setInt(3, io.getProject().getId());
+            prep.setInt(4, io.getQuantity());
+            prep.setString(5, io.getComments());
+            
+            return prep.executeUpdate();
+        } catch (SQLException ex) {
+            Logger.getLogger(cInventoryOperation.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        
         return -1;
     }
     

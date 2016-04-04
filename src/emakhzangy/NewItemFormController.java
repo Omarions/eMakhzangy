@@ -56,7 +56,7 @@ public class NewItemFormController implements Initializable {
         String tags = taTags.getText();
         String comments = taComments.getText();
 
-        Item item = new Item(0, name, tags, unit, unitPrice, comments);
+        Item item = new Item(0, name, tags,0, unit, unitPrice, comments);
 
         int addResult = new cItem().add(item);
         if (addResult > 0) {

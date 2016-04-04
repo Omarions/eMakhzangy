@@ -11,6 +11,7 @@ import javafx.beans.property.SimpleDoubleProperty;
 import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
+import sun.awt.im.SimpleInputMethodWindow;
 
 /**
  *
@@ -21,6 +22,7 @@ public class Item {
     private final IntegerProperty id;
     private final StringProperty name;
     private final StringProperty tags;
+    private final IntegerProperty quantity;
     private final StringProperty unit;
     private final DoubleProperty unitPrice;
     private final StringProperty comments;
@@ -29,15 +31,17 @@ public class Item {
         this.id = new SimpleIntegerProperty();
         this.name = new SimpleStringProperty();
         this.tags = new SimpleStringProperty();
+        this.quantity = new SimpleIntegerProperty();
         this.unit = new SimpleStringProperty();
         this.unitPrice = new SimpleDoubleProperty();
         this.comments = new SimpleStringProperty();
     }
 
-    public Item(int id, String name, String tags, String unit,double unitPrice, String comments) {
+    public Item(int id, String name, String tags,int quantity, String unit,double unitPrice, String comments) {
         this.id = new SimpleIntegerProperty(id);
         this.name = new SimpleStringProperty(name);
         this.tags = new SimpleStringProperty(tags);
+        this.quantity = new SimpleIntegerProperty(quantity);
         this.unit = new SimpleStringProperty(unit);
         this.unitPrice = new SimpleDoubleProperty(unitPrice);
         this.comments = new SimpleStringProperty(comments);
@@ -86,6 +90,10 @@ public class Item {
         return tags;
     }
 
+    /**
+     * 
+     * @return tags
+     */
     public String getTags() {
         return tags.get();
     }
@@ -95,6 +103,28 @@ public class Item {
      */
     public void setTags(String tags) {
         this.tags.set(tags);
+    }
+    
+    /**
+     * @return the tags
+     */
+    public IntegerProperty quantityProperty() {
+        return quantity;
+    }
+
+    /**
+     * 
+     * @return quantity as integer value.
+     */
+    public int getQuantity() {
+        return quantity.get();
+    }
+
+    /**
+     * @param quantity the value to be set
+     */
+    public void setQuantity(int quantity) {
+        this.quantity.set(quantity);
     }
 
     /**

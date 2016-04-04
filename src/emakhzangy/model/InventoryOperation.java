@@ -17,13 +17,12 @@ import javafx.beans.property.StringProperty;
  * @author Omar
  */
 public class InventoryOperation {
-    private IntegerProperty id;
-    private ObjectProperty<Inventory> inventory;
-    private ObjectProperty<Document> document;
-
-    private ObjectProperty<Project> project;
-    private IntegerProperty quantity;   
-    private StringProperty comments;
+    private final IntegerProperty id;
+    private final ObjectProperty<Inventory> inventory;
+    private final ObjectProperty<Document> document;
+    private final ObjectProperty<Project> project;
+    private final IntegerProperty quantity;   
+    private final StringProperty comments;
 
     public InventoryOperation() {
         this.id = new SimpleIntegerProperty();

@@ -10,6 +10,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.time.LocalDate;
 import java.util.List;
 import java.util.logging.Level;
@@ -74,6 +75,20 @@ public class cDocument {
     }
     
     public int add(Document document){
+        String query = "INSERT INTO document (operation_id, from_name, to_name, document_date, comments) VALUES(?,?,?,?,?)";
+        try {
+            PreparedStatement prep = conn.prepareStatement(query,Statement.RETURN_GENERATED_KEYS);
+            prep.setInt(1, document.getOperation().getId());
+            prep.setString(2, document.getFrom());
+            prep.setString(3, document.getTo());
+            prep.setString(4, document.getDate().toString());
+            prep.setString(5, document.getComments());
+            
+            return prep.getGeneratedKeys().getInt("id");
+        } catch (SQLException ex) {
+            Logger.getLogger(cDocument.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
         return -1;
     }
     
