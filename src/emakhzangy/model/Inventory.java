@@ -24,6 +24,12 @@ public class Inventory {
         this.item =new SimpleObjectProperty<>();
         this.availableQty = new SimpleIntegerProperty() ;
     }
+    
+    public Inventory(Item item, int availableQty) {
+        this();
+        this.item.set(item);
+        this.availableQty.set(availableQty) ;
+    }
 
     /**
      *
@@ -32,9 +38,10 @@ public class Inventory {
      * @param availableQty
      */
     public Inventory(int id, Item item, int availableQty) {
-        this.id = new SimpleIntegerProperty(id);
-        this.item =new SimpleObjectProperty<>(item);
-        this.availableQty = new SimpleIntegerProperty(availableQty) ;
+        this();
+        this.id.set(id);
+        this.item.set(item);
+        this.availableQty.set(availableQty) ;
     }
 
     /**

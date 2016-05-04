@@ -32,14 +32,24 @@ public class InventoryOperation {
         this.quantity = new SimpleIntegerProperty();
         this.comments = new SimpleStringProperty();
     }
+    
+    public InventoryOperation(Inventory inventory, Document document, Operation operation, Project project, int quantity, String comments) {
+        this();
+        this.inventory.set(inventory);
+        this.document.set(document);
+        this.project.set(project);
+        this.quantity.set(quantity);
+        this.comments.set(comments);
+    }
 
     public InventoryOperation(int id,Inventory inventory, Document document, Operation operation, Project project, int quantity, String comments) {
-        this.id = new SimpleIntegerProperty(id);
-        this.inventory = new SimpleObjectProperty<>(inventory);
-        this.document = new SimpleObjectProperty<>(document);
-        this.project = new SimpleObjectProperty<>(project);
-        this.quantity = new SimpleIntegerProperty(quantity);
-        this.comments = new SimpleStringProperty(comments);
+        this();
+        this.id.set(id);
+        this.inventory.set(inventory);
+        this.document.set(document);
+        this.project.set(project);
+        this.quantity.set(quantity);
+        this.comments.set(comments);
     }
 
     /**

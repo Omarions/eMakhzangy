@@ -28,7 +28,6 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.DatePicker;
-import javafx.scene.control.DialogPane;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
@@ -264,6 +263,10 @@ public class MainController implements Initializable {
         }
     }
     
+    /**
+     * Show the form for new out document
+     * @param event 
+     */
     public void showNewOutDocument(ActionEvent event){
         try {
             //load NewOutDocument form fxml file
@@ -285,4 +288,31 @@ public class MainController implements Initializable {
         }
         
     }
+   
+    /**
+     * Show the form for new in document
+     * @param event 
+    */
+    public void showNewInDocument(ActionEvent event){
+        try {
+            //load NewOutDocument form fxml file
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(getClass().getResource("NewInDocument.fxml"));
+            TitledPane dialogPane = (TitledPane) loader.load();
+            
+            Scene scene = new Scene(dialogPane);
+            scene.setFill(null);
+            
+            Stage dialogStage = new Stage();
+            dialogStage.initModality(Modality.WINDOW_MODAL);
+            dialogStage.initOwner(((Node)event.getSource()).getScene().getWindow());
+            dialogStage.initStyle(StageStyle.TRANSPARENT);
+            dialogStage.setScene(scene);
+            dialogStage.showAndWait();
+        } catch (IOException ex) {
+            Logger.getLogger(MainController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+    }
+    
 }

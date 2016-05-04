@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="505.0" prefWidth="740.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="emakhzangy.SearchItemController">
+   <children>
+      <BorderPane prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="0.0">
+         <center>
+            <TitledPane prefHeight="500.0" prefWidth="730.0" BorderPane.alignment="CENTER">
+               <BorderPane.margin>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </BorderPane.margin>
+               <content>
+                  <BorderPane prefHeight="200.0" prefWidth="200.0">
+                     <top>
+                        <GridPane hgap="2.0" vgap="2.0" BorderPane.alignment="CENTER">
+                          <columnConstraints>
+                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="337.0" minWidth="10.0" prefWidth="92.0" />
+                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="620.0" minWidth="10.0" prefWidth="252.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="620.0" minWidth="10.0" prefWidth="67.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="620.0" minWidth="10.0" prefWidth="273.0" />
+                          </columnConstraints>
+                          <rowConstraints>
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                          </rowConstraints>
+                           <children>
+                              <Label text="Part ID:">
+                                 <GridPane.margin>
+                                    <Insets left="5.0" right="5.0" />
+                                 </GridPane.margin>
+                              </Label>
+                              <Label text="Part Name:" GridPane.rowIndex="1">
+                                 <GridPane.margin>
+                                    <Insets left="5.0" right="5.0" />
+                                 </GridPane.margin>
+                              </Label>
+                              <Label text="Part Unit:" GridPane.rowIndex="2">
+                                 <GridPane.margin>
+                                    <Insets left="5.0" right="5.0" />
+                                 </GridPane.margin>
+                              </Label>
+                              <Label text="Unit Price:" GridPane.columnIndex="2">
+                                 <GridPane.margin>
+                                    <Insets left="5.0" right="5.0" />
+                                 </GridPane.margin>
+                              </Label>
+                              <Label text="Tags" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                                 <GridPane.margin>
+                                    <Insets left="5.0" right="5.0" />
+                                 </GridPane.margin>
+                              </Label>
+                              <TextArea fx:id="taTags" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="3" GridPane.rowIndex="1" GridPane.rowSpan="2" />
+                              <ComboBox fx:id="cmbID" editable="true" onAction="#idChanged" onKeyReleased="#idKeyReleased" prefHeight="22.0" prefWidth="244.0" promptText="Select ID" GridPane.columnIndex="1">
+                                 <GridPane.margin>
+                                    <Insets left="5.0" right="5.0" />
+                                 </GridPane.margin>
+                              </ComboBox>
+                              <ComboBox fx:id="cmbName" editable="true" onAction="#nameChanged" onKeyReleased="#nameKeyReleased" prefHeight="22.0" prefWidth="240.0" promptText="Select Name" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                 <GridPane.margin>
+                                    <Insets left="5.0" right="5.0" />
+                                 </GridPane.margin>
+                              </ComboBox>
+                              <ComboBox fx:id="cmbUnit" prefHeight="22.0" prefWidth="239.0" promptText="Select Unit" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                 <GridPane.margin>
+                                    <Insets left="5.0" right="5.0" />
+                                 </GridPane.margin>
+                              </ComboBox>
+                              <HBox prefHeight="100.0" prefWidth="200.0" spacing="10.0" GridPane.columnIndex="3">
+                                 <children>
+                                    <TextField fx:id="tfMinPrice" prefHeight="24.0" prefWidth="112.0" />
+                                    <Label text="To" />
+                                    <TextField fx:id="tfMaxPrice" prefHeight="24.0" prefWidth="125.0" />
+                                 </children>
+                              </HBox>
+                           </children>
+                           <BorderPane.margin>
+                              <Insets />
+                           </BorderPane.margin>
+                           <padding>
+                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                           </padding>
+                        </GridPane>
+                     </top>
+                     <bottom>
+                        <TableView fx:id="tblItems" editable="true" prefHeight="264.0" prefWidth="695.0" tableMenuButtonVisible="true" BorderPane.alignment="CENTER">
+                          <columns>
+                            <TableColumn fx:id="colID" prefWidth="57.0" text="ID" />
+                            <TableColumn fx:id="colName" onEditCancel="#cancel" prefWidth="206.0" text="Name" />
+                              <TableColumn fx:id="colUnit" prefWidth="54.0" resizable="false" text="Unit" />
+                              <TableColumn fx:id="colUnitPrice" prefWidth="70.0" resizable="false" text="Unit Price" />
+                              <TableColumn fx:id="colTags" prefWidth="139.0" text="Tags" />
+                              <TableColumn fx:id="colComments" prefWidth="155.0" text="Comments" />
+                          </columns>
+                           <columnResizePolicy>
+                              <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                           </columnResizePolicy>
+                        </TableView>
+                     </bottom>
+                     <center>
+                        <ToolBar prefHeight="28.0" prefWidth="695.0" BorderPane.alignment="CENTER">
+                          <items>
+                              <HBox prefHeight="18.0" prefWidth="200.0">
+                                 <children>
+                                    <Button fx:id="btnPrint" mnemonicParsing="false" onAction="#print" text="Print" />
+                                 </children>
+                              </HBox>
+                              <HBox alignment="CENTER_RIGHT" prefHeight="22.0" prefWidth="464.0" spacing="10.0">
+                                 <children>
+                                  <Button fx:id="btnCancel" cancelButton="true" mnemonicParsing="false" onAction="#cancel" text=" Cancel" />
+                                    <Button fx:id="btnSave" defaultButton="true" mnemonicParsing="false" onAction="#save" text="Save" />
+                                 </children>
+                              </HBox>
+                          </items>
+                           <BorderPane.margin>
+                              <Insets bottom="2.0" />
+                           </BorderPane.margin>
+                        </ToolBar>
+                     </center>
+                  </BorderPane>
+               </content>
+            </TitledPane>
+         </center>
+         <bottom>
+            <ToolBar nodeOrientation="RIGHT_TO_LEFT" prefHeight="40.0" prefWidth="200.0" BorderPane.alignment="CENTER_RIGHT">
+              <items>
+                <Button fx:id="btnClose" defaultButton="true" mnemonicParsing="false" onAction="#close" text="Close" />
+              </items>
+               <BorderPane.margin>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </BorderPane.margin>
+            </ToolBar>
+         </bottom>
+         <effect>
+            <DropShadow />
+         </effect>
+      </BorderPane>
+   </children>
+</AnchorPane>

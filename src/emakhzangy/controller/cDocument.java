@@ -21,6 +21,7 @@ import java.util.logging.Logger;
  * @author Omar
  */
 public class cDocument {
+
     Connection conn;
 
     public cDocument() {
@@ -30,16 +31,15 @@ public class cDocument {
             Logger.getLogger(cDocument.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-    
-    
-    public Document getDocument(int id){
+
+    public Document getDocument(int id) {
         Document document = new Document();
         String query = "SELECT * FROM document WHERE id=?";
         try {
             PreparedStatement prep = conn.prepareStatement(query);
             prep.setInt(1, id);
             ResultSet rs = prep.executeQuery();
-            while(rs.next()){
+            while (rs.next()) {
                 document.setId(rs.getInt("id"));
                 document.setOperation(new cOperation().getOperation(
                         rs.getInt("operation_id")));
@@ -53,51 +53,55 @@ public class cDocument {
         }
         return document;
     }
-    
-    public List<Document> getByFrom(String from){
+
+    public List<Document> getByFrom(String from) {
         return null;
     }
-    
-    public List<Document> getByTo(String to){
+
+    public List<Document> getByTo(String to) {
         return null;
     }
-    
-    public List<Document> getByDate(LocalDate date){
+
+    public List<Document> getByDate(LocalDate date) {
         return null;
     }
-    
-    public List<Document> getByDate(LocalDate date1, LocalDate date2){
+
+    public List<Document> getByDate(LocalDate date1, LocalDate date2) {
         return null;
     }
-    
-    public List<Document> getDocuments(){
+
+    public List<Document> getDocuments() {
         return null;
     }
-    
-    public int add(Document document){
-        String query = "INSERT INTO document (operation_id, from_name, to_name, document_date, comments) VALUES(?,?,?,?,?)";
+
+    public int add(Document document) {
+        String query = "INSERT INTO document (id,operation_id, from_name, to_name, document_date, comments) VALUES(0,?,?,?,?,?)";
         try {
-            PreparedStatement prep = conn.prepareStatement(query,Statement.RETURN_GENERATED_KEYS);
+            PreparedStatement prep = conn.prepareStatement(query, Statement.RETURN_GENERATED_KEYS);
             prep.setInt(1, document.getOperation().getId());
             prep.setString(2, document.getFrom());
             prep.setString(3, document.getTo());
             prep.setString(4, document.getDate().toString());
             prep.setString(5, document.getComments());
-            
-            return prep.getGeneratedKeys().getInt("id");
+            if (prep.executeUpdate() > 0) {
+                ResultSet rs = prep.getGeneratedKeys();
+                if (rs.next()) {
+                    return rs.getInt("GENERATED_KEY");
+                }
+            }
         } catch (SQLException ex) {
             Logger.getLogger(cDocument.class.getName()).log(Level.SEVERE, null, ex);
         }
-        
+
         return -1;
     }
-    
-    public int update(int id, Document document){
+
+    public int update(int id, Document document) {
         return -1;
     }
-    
-    public int remove(int id){
+
+    public int remove(int id) {
         return -1;
     }
-    
+
 }

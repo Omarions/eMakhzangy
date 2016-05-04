@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.2.1.final using JasperReports Library version 6.2.1  -->
+<!-- 2016-04-12T10:12:24 -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="OutDocument" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="52036df3-3afe-4129-9aed-07b1bfce629d">
+    <parameter name="FROM" class="java.lang.String"/>
+    <parameter name="TO" class="java.lang.String"/>
+    <parameter name="PROJECT" class="java.lang.String"/>
+    <parameter name="DOC_DATE" class="java.lang.String"/>
+    <parameter name="DOC_COMMENTS" class="java.lang.String"/>
+    <queryString>
+		<![CDATA[]]>
+    </queryString>
+    <field name="id" class="java.lang.Integer">
+        <fieldDescription><![CDATA[id]]></fieldDescription>
+    </field>
+    <field name="name" class="java.lang.String">
+        <fieldDescription><![CDATA[name]]></fieldDescription>
+    </field>
+    <field name="unit" class="java.lang.String">
+        <fieldDescription><![CDATA[unit]]></fieldDescription>
+    </field>
+    <field name="quantity" class="java.lang.Integer">
+        <fieldDescription><![CDATA[quantity]]></fieldDescription>
+    </field>
+    <field name="comments" class="java.lang.String">
+        <fieldDescription><![CDATA[comments]]></fieldDescription>
+    </field>
+    <background>
+        <band splitType="Stretch"/>
+    </background>
+    <title>
+        <band height="79" splitType="Stretch">
+            <image>
+                <reportElement x="11" y="12" width="50" height="50" uuid="7112c6b9-176a-4f71-be6c-b7d588f597dd"/>
+            </image>
+            <staticText>
+                <reportElement x="170" y="12" width="210" height="30" uuid="29e1d397-1d80-4bba-81f8-c1056906920f"/>
+                <textElement>
+                    <font fontName="Georgia" size="22" isBold="true"/>
+                </textElement>
+                <text><![CDATA[Output Document]]></text>
+            </staticText>
+        </band>
+    </title>
+    <pageHeader>
+        <band height="84" splitType="Stretch">
+            <staticText>
+                <reportElement x="0" y="0" width="60" height="30" uuid="5f4ee20e-cb04-47be-854a-820e3f6450f4"/>
+                <textElement>
+                    <font fontName="Arial Black" size="12" isBold="true"/>
+                </textElement>
+                <text><![CDATA[From]]></text>
+            </staticText>
+            <textField>
+                <reportElement x="60" y="0" width="220" height="30" uuid="dbda608f-e356-40ec-a095-1c9aae9ad00a"/>
+                <textFieldExpression><![CDATA[$P{FROM}]]></textFieldExpression>
+            </textField>
+            <textField>
+                <reportElement x="290" y="0" width="50" height="30" uuid="bcab9e47-f075-4d07-8e48-66e4884069ef"/>
+                <textElement>
+                    <font fontName="Arial Black" size="12" isBold="true"/>
+                </textElement>
+                <textFieldExpression><![CDATA["To"]]></textFieldExpression>
+            </textField>
+            <textField>
+                <reportElement x="340" y="0" width="220" height="30" uuid="de447d6e-e76d-4646-9874-d14604477a66"/>
+                <textFieldExpression><![CDATA[$P{TO}]]></textFieldExpression>
+            </textField>
+            <staticText>
+                <reportElement x="0" y="30" width="61" height="30" uuid="a45194f3-3864-4aec-95e8-7ce556ea707e"/>
+                <textElement>
+                    <font fontName="Arial Black" size="12" isBold="true"/>
+                </textElement>
+                <text><![CDATA[Project]]></text>
+            </staticText>
+            <textField>
+                <reportElement x="60" y="30" width="220" height="30" uuid="4ead84a5-3ee9-4df5-a431-122e5454119f"/>
+                <textFieldExpression><![CDATA[$P{PROJECT}]]></textFieldExpression>
+            </textField>
+            <staticText>
+                <reportElement x="0" y="60" width="100" height="23" uuid="a47ab3da-b619-445c-b662-b377d23464b7"/>
+                <textElement>
+                    <font fontName="Arial Black" size="12" isBold="true"/>
+                </textElement>
+                <text><![CDATA[Items:-]]></text>
+            </staticText>
+            <textField>
+                <reportElement x="340" y="31" width="200" height="30" uuid="36641be5-ee95-4c36-800b-98cedc6d72ea"/>
+                <textFieldExpression><![CDATA[$P{DOC_DATE}]]></textFieldExpression>
+            </textField>
+            <staticText>
+                <reportElement x="290" y="30" width="50" height="30" uuid="8ae2614a-da60-4e34-b70b-090b777351ee"/>
+                <textElement>
+                    <font fontName="Arial Black" size="12" isBold="true"/>
+                </textElement>
+                <text><![CDATA[Date]]></text>
+            </staticText>
+        </band>
+    </pageHeader>
+    <columnHeader>
+        <band height="24" splitType="Stretch">
+            <staticText>
+                <reportElement x="0" y="-1" width="50" height="17" uuid="0d748e80-82ef-4bf1-abdb-542ac8b2b7af"/>
+                <text><![CDATA[Item(#)]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="50" y="0" width="200" height="17" uuid="937c2c47-46a5-4c41-aa52-304a5863e23b"/>
+                <text><![CDATA[Item Name]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="250" y="0" width="50" height="17" uuid="8f103d49-fbde-4998-8f0b-bf704dfaff6d"/>
+                <text><![CDATA[Unit]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="300" y="-1" width="50" height="18" uuid="c93c26b2-8509-4027-a60f-ee3de9e07982"/>
+                <text><![CDATA[Qty]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="350" y="0" width="210" height="16" uuid="7461e46a-2dfb-4e0a-813b-d851b24b9954"/>
+                <text><![CDATA[Comments]]></text>
+            </staticText>
+        </band>
+    </columnHeader>
+    <detail>
+        <band height="47" splitType="Stretch">
+            <textField>
+                <reportElement x="0" y="0" width="50" height="30" uuid="0734ff69-6d16-41f8-a047-64db61b2d96a"/>
+                <textFieldExpression><![CDATA[$F{id}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="50" y="0" width="200" height="30" uuid="f90e8f73-a8c9-410f-b1d3-407172f7015d"/>
+				<textFieldExpression><![CDATA[$F{name}]]></textFieldExpression>
+            </textField>
+            <textField>
+                <reportElement x="250" y="0" width="50" height="30" uuid="24535d64-0ff5-4ffb-8da4-ade39ded3fee"/>
+                <textFieldExpression><![CDATA[$F{unit}]]></textFieldExpression>
+            </textField>
+            <textField>
+                <reportElement x="300" y="0" width="50" height="30" uuid="ba058a4b-da98-43e8-8771-b4bc2cd4891d"/>
+                <textFieldExpression><![CDATA[$F{quantity}]]></textFieldExpression>
+            </textField>
+            <textField>
+                <reportElement x="350" y="0" width="210" height="30" uuid="d7ce40c2-81ec-4182-a249-f420d939112e"/>
+                <textFieldExpression><![CDATA[$F{comments}]]></textFieldExpression>
+            </textField>
+        </band>
+    </detail>
+    <columnFooter>
+        <band height="70" splitType="Stretch">
+            <staticText>
+                <reportElement x="0" y="0" width="60" height="54" uuid="f7f412d2-0a1c-445b-bc66-7d004c0b863b"/>
+                <textElement>
+                    <font fontName="Arial Black" size="12" isBold="true"/>
+                </textElement>
+                <text><![CDATA[Notes]]></text>
+            </staticText>
+            <textField>
+                <reportElement x="60" y="0" width="499" height="70" uuid="ebb4d11b-33a4-4e90-8af6-4f52da61d106"/>
+                <textFieldExpression><![CDATA[$P{DOC_COMMENTS}]]></textFieldExpression>
+            </textField>
+        </band>
+    </columnFooter>
+    <pageFooter>
+        <band height="110" splitType="Stretch">
+            <textField>
+                <reportElement x="354" y="80" width="202" height="22" uuid="6180e739-12b2-46dc-ab82-0c457446806b"/>
+                <textFieldExpression><![CDATA["Page " + $V{PAGE_NUMBER} + "/" + $V{PAGE_COUNT}]]></textFieldExpression>
+            </textField>
+            <staticText>
+                <reportElement x="0" y="10" width="127" height="30" uuid="bbf9d2cf-295e-4411-8dfd-3b845540c707"/>
+                <textElement textAlignment="Center">
+                    <font fontName="Arial Black" size="12" isBold="true"/>
+                </textElement>
+                <text><![CDATA[Siganture]]></text>
+            </staticText>
+        </band>
+    </pageFooter>
+    <summary>
+        <band height="42" splitType="Stretch"/>
+    </summary>
+</jasperReport>

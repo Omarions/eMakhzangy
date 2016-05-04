@@ -33,16 +33,30 @@ public class Document {
         this.date = new SimpleObjectProperty<>();
         this.comments = new SimpleStringProperty();
     }
+    
+    public Document(Operation operation, String from, String to
+            , LocalDate date, String comments) {
+        
+        this();
+
+        this.operation.set(operation);
+        this.from.set(from);
+        this.to.set(to);
+        this.date.set(date);
+        this.comments.set(to);
+    }
 
     public Document(int id, Operation operation, String from, String to
             , LocalDate date, String comments) {
         
-        this.id = new SimpleIntegerProperty(id);
-        this.operation = new SimpleObjectProperty<>(operation);
-        this.from = new SimpleStringProperty(from);
-        this.to = new SimpleStringProperty(to);
-        this.date = new SimpleObjectProperty<>(date);
-        this.comments = new SimpleStringProperty(comments);
+        this();
+
+        this.id.set(id);
+        this.operation.set(operation);
+        this.from.set(from);
+        this.to.set(to);
+        this.date.set(date);
+        this.comments.set(to);
     }
 
     /**
@@ -139,11 +153,11 @@ public class Document {
      * @return the supplierName
      */
     public StringProperty commentsProperty() {
-        return from;
+        return comments;
     }
 
     public String getComments(){
-        return from.get();
+        return comments.get();
     }
     
     /**
